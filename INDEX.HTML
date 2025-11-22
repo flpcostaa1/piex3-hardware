@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PIEX III - João Felipe</title>
+    <style>
+      /* --- RESET BÁSICO --- */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f0f0f0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+      }
+
+      /* --- CONTAINER DO CARROSSEL --- */
+      .carrossel-container {
+        position: relative;
+        width: 100%;
+        max-width: 500px; /* Largura estilo post de celular */
+        height: auto;
+        aspect-ratio: 4/5; /* Proporção do Instagram */
+        background: #fff;
+        border-radius: 20px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        overflow: hidden;
+      }
+
+      .slides {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+        height: 100%;
+      }
+
+      .slide {
+        min-width: 100%;
+        height: 100%;
+      }
+
+      .slide img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain; /* Ajusta a imagem sem cortar */
+        display: block;
+      }
+
+      /* --- ESTILOS DA CAPA (SLIDE 0) --- */
+      .intro-slide {
+        background-color: #eae7e2; /* Fundo Bege igual ao Canva */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 30px;
+        color: #8b5e3c; /* Marrom */
+      }
+
+      .intro-slide h1 {
+        font-family: "Times New Roman", serif;
+        font-size: 3.5rem;
+        font-weight: normal;
+        margin-bottom: 5px;
+        letter-spacing: 2px;
+      }
+
+      .intro-slide h2 {
+        font-family: "Segoe UI", sans-serif;
+        font-size: 1rem;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        margin-bottom: 30px;
+        border-bottom: 2px solid #d4a373;
+        padding-bottom: 10px;
+      }
+
+      .info-box {
+        background-color: rgba(255, 255, 255, 0.6);
+        padding: 15px;
+        border-radius: 15px;
+        width: 100%;
+        margin-bottom: 15px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+      }
+
+      .info-box p {
+        font-family: "Segoe UI", sans-serif;
+        font-size: 0.9rem;
+        margin: 5px 0;
+        color: #5a3a25;
+      }
+
+      .destaque {
+        font-weight: bold;
+        color: #8b5e3c;
+        font-size: 1.1rem;
+        text-transform: uppercase;
+      }
+
+      .tech-tag {
+        margin-top: 15px;
+        font-size: 0.75rem;
+        color: #666;
+        border: 1px solid #8b5e3c;
+        padding: 5px 15px;
+        border-radius: 20px;
+      }
+
+      /* --- NAVEGAÇÃO (BOTÕES) --- */
+      .btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: rgba(255, 255, 255, 0.7);
+        border: none;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        cursor: pointer;
+        font-size: 20px;
+        color: #333;
+        transition: background 0.3s;
+        z-index: 10;
+      }
+
+      .btn:hover {
+        background-color: rgba(255, 255, 255, 1);
+      }
+
+      .prev {
+        left: 15px;
+      }
+      .next {
+        right: 15px;
+      }
+
+      /* --- INDICADORES (BOLINHAS) --- */
+      .indicadores {
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        gap: 10px;
+      }
+
+      .dot {
+        width: 12px;
+        height: 12px;
+        background-color: rgba(255, 255, 255, 0.5);
+        border: 2px solid #666;
+        border-radius: 50%;
+        cursor: pointer;
+        transition: background 0.3s;
+      }
+
+      .dot.active {
+        background-color: #d4a373; /* Cor Ativa (Marrom Claro) */
+        border-color: #d4a373;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="carrossel-container">
+      <div class="slides">
+        <div class="slide intro-slide">
+          <h1>PIEX III</h1>
+          <h2>Projeto Integrado de Extensão</h2>
+
+          <div class="info-box">
+            <p>ALUNO</p>
+            <p class="destaque">JOÃO FELIPE DE JESUS COSTA</p>
+            <hr style="border: 0; border-top: 1px solid #ccc; margin: 10px 0" />
+            <p>CURSO</p>
+            <p class="destaque">ANÁLISE E DESENVOLVIMENTO DE SISTEMAS</p>
+          </div>
+
+          <div class="info-box">
+            <p>TEMA</p>
+            <p class="destaque">HARDWARE SUSTENTÁVEL & ODS 12</p>
+            <p style="font-size: 0.8rem; margin-top: 5px">
+              Mídia Digital Interativa (Web/Front-end)
+            </p>
+          </div>
+
+          <div class="tech-tag">HTML5 • CSS3 • JAVASCRIPT</div>
+        </div>
+
+        <div class="slide">
+          <img
+            src="IMAGES/IMG1.jpg"
+            alt="Você sabe para onde vai seu PC antigo?"
+          />
+        </div>
+        <div class="slide">
+          <img
+            src="IMAGES/IMG2.jpg"
+            alt="Dados sobre lixo eletrônico no Brasil"
+          />
+        </div>
+        <div class="slide">
+          <img src="IMAGES/IMG3.jpg" alt="Nem tudo é lixo: reuso de peças" />
+        </div>
+        <div class="slide">
+          <img src="IMAGES/IMG4.png" alt="Logística reversa e PNRS" />
+        </div>
+        <div class="slide">
+          <img src="IMAGES/IMG5.png" alt="Conclusão e Call to Action" />
+        </div>
+      </div>
+
+      <button class="btn prev" onclick="mudarSlide(-1)">&#10094;</button>
+      <button class="btn next" onclick="mudarSlide(1)">&#10095;</button>
+
+      <div class="indicadores">
+        <span class="dot active" onclick="irParaSlide(0)"></span>
+        <span class="dot" onclick="irParaSlide(1)"></span>
+        <span class="dot" onclick="irParaSlide(2)"></span>
+        <span class="dot" onclick="irParaSlide(3)"></span>
+        <span class="dot" onclick="irParaSlide(4)"></span>
+        <span class="dot" onclick="irParaSlide(5)"></span>
+      </div>
+    </div>
+
+    <script>
+      let slideAtual = 0;
+      const slides = document.querySelectorAll(".slide");
+      const dots = document.querySelectorAll(".dot");
+      const totalSlides = slides.length;
+
+      function atualizarCarrossel() {
+        const containerSlides = document.querySelector(".slides");
+
+        // Move o container para a esquerda
+        containerSlides.style.transform = `translateX(-${slideAtual * 100}%)`;
+
+        // Atualiza as bolinhas ativas
+        dots.forEach((dot) => dot.classList.remove("active"));
+        if (dots[slideAtual]) {
+          dots[slideAtual].classList.add("active");
+        }
+      }
+
+      function mudarSlide(direcao) {
+        slideAtual += direcao;
+
+        if (slideAtual >= totalSlides) {
+          slideAtual = 0;
+        } else if (slideAtual < 0) {
+          slideAtual = totalSlides - 1;
+        }
+
+        atualizarCarrossel();
+      }
+
+      function irParaSlide(index) {
+        slideAtual = index;
+        atualizarCarrossel();
+      }
+
+      // Auto-play a cada 5 segundos
+      setInterval(() => {
+        mudarSlide(1);
+      }, 5000);
+    </script>
+  </body>
+</html>
